@@ -29,11 +29,9 @@ jobs:
           # No cache config — avoids the path resolution error
 
       - name: Install dependencies
-        working-directory: docs/pallet-xp-docs
         run: npm install
 
       - name: Build Docusaurus
-        working-directory: docs/pallet-xp-docs
         run: npm run build
 
       - name: Deploy to GitHub Pages
