@@ -41,8 +41,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: docs/pallet-xp-docs/build
-          destination_dir: pallet-xp/
+          publish_dir: ./build
           publish_branch: gh-pages
-          force_orphan: false
-          keep_files: true
