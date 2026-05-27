@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpallet_xp=self.webpackChunkpallet_xp||[]).push([["9598"],{7613(e,p,a){a.d(p,{createPieServices:()=>l.f});var l=a(9515);a(3345)}}]);

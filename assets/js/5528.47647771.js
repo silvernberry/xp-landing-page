@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkpallet_xp=self.webpackChunkpallet_xp||[]).push([["5528"],{1947(e,a,l){l.d(a,{createWardleyServices:()=>p.J});var p=l(2295);l(3345)}}]);
