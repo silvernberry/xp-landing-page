@@ -5,7 +5,7 @@
   background: var(--sec-4-bg);
   padding: var(--sec-padding);
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .inner {
@@ -167,7 +167,14 @@
   flex-direction: column;
   gap: 12px;
   position: sticky;
-  top: 40px;
+  top: 85px; 
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.cardsCol::-webkit-scrollbar {
+  display: none;
 }
 
 .legCard {

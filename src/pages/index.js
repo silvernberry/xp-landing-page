@@ -9,6 +9,7 @@ import CompSec5 from '@site/src/components/CompSec5';
 import CompSec6 from '@site/src/components/CompSec6';
 import CompSec7 from '@site/src/components/CompSec7';
 import CompSec8 from '@site/src/components/CompSec8';
+import CompSec9 from '@site/src/components/CompSec9';
 import HomeFooter from '@site/src/components/HomeFooter';
 import styles from './index.module.css';
 
@@ -26,6 +27,7 @@ export default function Home() {
           <CompSec6 />
           <CompSec7 />
           <CompSec8 />
+          <CompSec9 />
           <HomeFooter/>
         </main>
       </div>

@@ -152,6 +152,36 @@
   color: var(--text-primary);
 }
 
+.attrBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  padding: 5px 14px;
+  font-family: var(--font-family);
+  font-size: var(--fs-body-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-decoration: none !important;
+  transition: border-color 0.2s, color 0.2s;
+  animation: fadeSlideUp 0.65s ease 0.4s both;
+}
+
+.attrBadge:hover {
+  border-color: #E6007A;
+  color: rgba(220, 220, 240, 0.9);
+}
+
+.attrDivider {
+  width: 1px;
+  height: 12px;
+  background: var(--text-secondary);
+  flex-shrink: 0;
+}
+
 .imageWrapper {
   flex: 1;
   display: flex;
@@ -169,12 +199,19 @@
   transform-origin: center center;
 }
 
+.polkadotLogo {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  display: block;
+}
+
 @keyframes float {
   0%   {
     transform: translateY(0px);
   }
   50%  {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
   }
   100% {
     transform: translateY(0px);
@@ -219,6 +256,10 @@
   .hero {
     padding: 0 1.25rem;
     padding-top: 72px;
+  }
+
+  .attrBadge {
+    font-size: 0.65rem;
   }
 
   .actions {

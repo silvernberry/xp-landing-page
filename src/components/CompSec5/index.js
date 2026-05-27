@@ -15,12 +15,24 @@ const xpFields = [
   { label: 'Timestamp', tag: 'activity', color: '#818cf8' },
 ];
 
+const Kw = ({ children }) => (
+  <code style={{
+    fontFamily: "'Fira Code', monospace",
+    fontSize: '0.82em',
+    background: 'rgba(127, 95, 255, 0.1)',
+    border: '1px solid rgba(127, 95, 255, 0.2)',
+    borderRadius: 4,
+    padding: '0.1em 0.35em',
+    color: '#c4b5fd',
+  }}>{children}</code>
+);
+
 const steps = [
   {
     id: 'step1',
     num: '01',
     head: 'You own the key.\nYou own the XP.',
-    sub: 'Your XpId holds your reputation. As long as you hold the key, everything inside belongs to you.',
+    sub: <>Your <Kw>XpId</Kw> holds your reputation. As long as you hold the key, everything inside belongs to you.</>,
     badge: 'Identity-bound',
   },
   {

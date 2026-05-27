@@ -5,7 +5,7 @@
   right: 0;
   z-index: 999;
   background: transparent;
-  padding: 0 clamp(1.25rem, 4vw, 4rem);  
+  /* padding: 0 clamp(1.25rem, 4vw, 4rem); */
   transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -16,7 +16,6 @@
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-/* Docs pages — always show solid background, no transparency */
 .navbarDocs {
   background: rgba(7, 7, 13, 0.96);
   backdrop-filter: blur(20px);
@@ -25,15 +24,17 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* scrolled + docs — keep docs style, just slightly more opaque */
 .navbarDocs.scrolled {
   background: rgba(7, 7, 13, 0.99);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.09);
 }
 
+/* ── Inner ───────────────────────────────────────────────── */
+
 .inner {
   margin: 0 auto;
   max-width: var(--res-max-width);
+  padding: 0 clamp(1.25rem, 4vw, 4rem);
   height: clamp(72px, 6vh, 100px);
   display: flex;
   align-items: center;
@@ -41,10 +42,9 @@
   gap: clamp(1rem, 2vw, 2.5rem);
 }
 
-.logo {
-  text-decoration: none;
-  flex-shrink: 0;
-}
+/* ── Logo ────────────────────────────────────────────────── */
+
+.logo { text-decoration: none; flex-shrink: 0; }
 
 .logoText {
   font-family: var(--font-family);
@@ -56,6 +56,8 @@
 }
 
 .logoAccent { color: var(--accent-primary); }
+
+/* ── Nav links ───────────────────────────────────────────── */
 
 .navLinks {
   display: flex;
@@ -69,49 +71,110 @@
 }
 
 .navLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: var(--font-family);
   font-size: clamp(0.82rem, 1vw, 1rem);
   font-weight: 600;
   color: var(--text-primary);
   text-decoration: none;
   letter-spacing: 0.01em;
-  position: relative;
-  transition: color 0.2s ease;
   white-space: nowrap;
-}
-
-.navLink::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--accent-primary);
-  transition: width 0.25s ease;
+  transition: color 0.2s ease;
 }
 
 .navLink:hover {
-  color: var(--text-secondary);
+  color: var(--text-highlight);
   text-decoration: none;
 }
 
-.navLink:hover::after { width: 100%; }
-
-/* Active link highlight — useful on docs pages */
-.navLinkActive {
-  color: var(--accent-primary);
+.navIcon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: opacity 0.2s;
 }
 
-.navLinkActive::after {
-  width: 100%;
+.navLink:hover .navIcon { opacity: 1; }
+
+/* ── Right group ─────────────────────────────────────────── */
+
+.rightGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
+
+.navSep {
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+}
+
+/* ── GitHub Star button ──────────────────────────────────── */
+
+.ghBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  padding: 0.5rem 0.85rem;
+  font-family: var(--font-family);
+  font-size: clamp(0.78rem, 0.95vw, 0.9rem);
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.ghBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.ghIcon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--text-primary);
+}
+
+.starBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(250, 199, 117, 0.12);
+  border: 1px solid rgba(250, 199, 117, 0.25);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #FAC775;
+}
+
+.starIcon {
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  color: #FAC775;
+}
+
+/* ── CTA button ──────────────────────────────────────────── */
 
 .ctaButton {
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
-  padding: clamp(0.45rem, 0.8vw, 0.65rem) clamp(1rem, 1.5vw, 1.6rem);
+  padding: 0.5rem 0.85rem;
   background: var(--button-primary);
   color: var(--text-primary);
   font-family: var(--font-family);
@@ -133,6 +196,8 @@
 }
 
 .ctaButton:active { transform: translateY(0); }
+
+/* ── Hamburger ───────────────────────────────────────────── */
 
 .hamburger {
   display: none;
@@ -158,6 +223,8 @@
 .barMid { opacity: 0; }
 .barBot { transform: translateY(-7px) rotate(-45deg); }
 
+/* ── Mobile menu ─────────────────────────────────────────── */
+
 .mobileMenu {
   display: none;
   flex-direction: column;
@@ -169,9 +236,12 @@
   transition: max-height 0.35s ease;
 }
 
-.mobileMenuOpen { max-height: 400px; }
+.mobileMenuOpen { max-height: 500px; }
 
 .mobileLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   padding: 1rem 2rem;
   font-family: var(--font-family);
   font-size: 1rem;
@@ -188,8 +258,51 @@
   text-decoration: none;
 }
 
+.mobileLinkIcon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.mobileCtas {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 1.25rem 2rem 1.5rem;
+}
+
+.mobileGhBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.75rem 1.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  font-family: var(--font-family);
+  font-size: var(--font-size-context);
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.mobileStarBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  background: rgba(250, 199, 117, 0.12);
+  border: 1px solid rgba(250, 199, 117, 0.25);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #FAC775;
+}
+
 .mobileCta {
-  margin: 1.25rem 2rem 1.5rem;
+  /* margin: 1.25rem 2rem 1.5rem; */
   padding: 0.75rem 1.4rem;
   background: var(--button-primary);
   color: var(--text-primary);
@@ -198,14 +311,13 @@
   font-weight: 600;
   text-align: center;
   border-radius: 6px;
-  text-decoration: none !important;
-}
+  text-decoration: none !important;}
 
-/* Breakpoints */
+/* ── Breakpoints ─────────────────────────────────────────── */
 
 @media (max-width: 768px) {
   .navLinks,
-  .ctaButton { display: none; }
-  .hamburger { display: flex; }
-  .mobileMenu { display: flex; }
+  .rightGroup  { display: none; }
+  .hamburger   { display: flex; }
+  .mobileMenu  { display: flex; }
 }

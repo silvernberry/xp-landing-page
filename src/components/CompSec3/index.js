@@ -67,7 +67,8 @@ export default function CompSec3() {
               <p className={styles.ctW}>XP rewards impact.</p>
               <div className={styles.hr} />
               <div className={styles.tag}><span className={`${styles.dot} ${styles.dotViolet}`} />Aligned incentives</div>
-              <div className={styles.tag}><span className={`${styles.dot} ${styles.dotAmber}`} />Long-term trust</div>
+              <div className={styles.tag}><span className={`${styles.dot} ${styles.dotViolet}`} />Long-term trust</div>
+              <div className={styles.tag}><span className={`${styles.dot} ${styles.dotViolet}`} />Reputation over noise</div>
             </div>
           </div>
 

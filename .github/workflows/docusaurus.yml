@@ -1,0 +1,48 @@
+name: Pallet-XP Docs Site
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    name: Build & Deploy Pallet-XP Docs
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          # No cache config — avoids the path resolution error
+
+      - name: Install dependencies
+        working-directory: docs/pallet-xp-docs
+        run: npm install
+
+      - name: Build Docusaurus
+        working-directory: docs/pallet-xp-docs
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: docs/pallet-xp-docs/build
+          destination_dir: pallet-xp/
+          publish_branch: gh-pages
+          force_orphan: false
+          keep_files: true

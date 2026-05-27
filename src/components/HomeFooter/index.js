@@ -3,33 +3,56 @@ import Link from '@docusaurus/Link';
 import styles from './styles.module.css';
 
 const logoMark  = require('@site/static/img/xp_logo.png').default;
-const auguthImg = require('@site/static/img/parent_logo.png').default;
+const auguthImg = require('@site/static/img/parent_logo_v2.png').default;
 
 const links = [
   { label: 'Docs',   to: '/docs/intro', internal: true },
   { label: 'Crates', href: 'https://crates.io/crates/pallet-xp' },
   { label: 'Source', href: 'https://docs.rs/pallet-xp/0.1.1/src/pallet_xp/lib.rs.html#16-2537' },
+  { label: 'Template', href: 'https://github.com/auguth/xp-substrate-template' },
 ];
 
 const social = [
-  { label: 'Github',   href: 'https://github.com/auguth/frame-suite' },
+  { label: 'Github',   href: 'https://github.com/auguth/' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/auguth-labs/' },
   { label: 'Email',    href: 'mailto:auguthlabs@gmail.com' },
 ];
+
+const PolkadotLogo = () => (
+  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.5 21h13M12 21V7m0 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm2-1.8c3.073.661 2.467 2.8 5 2.8M5 8c3.359 0 2.192-2.115 5.012-2.793M7 9.556V7.75m0 1.806-1.95 4.393a.773.773 0 0 0 .37.962.785.785 0 0 0 .362.089h2.436a.785.785 0 0 0 .643-.335.776.776 0 0 0 .09-.716L7 9.556Zm10 0V7.313m0 2.243-1.95 4.393a.773.773 0 0 0 .37.962.786.786 0 0 0 .362.089h2.436a.785.785 0 0 0 .643-.335.775.775 0 0 0 .09-.716L17 9.556Z"/>
+  </svg>
+);
+
+const LinkIcon = () => (
+  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="none" viewBox="0 0 24 24">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.213 9.787a3.391 3.391 0 0 0-4.795 0l-3.425 3.426a3.39 3.39 0 0 0 4.795 4.794l.321-.304m-.321-4.49a3.39 3.39 0 0 0 4.795 0l3.424-3.426a3.39 3.39 0 0 0-4.794-4.795l-1.028.961"/>
+  </svg>
+);
+
+const SocialIcon = () => (
+  <svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="18" cy="5" r="3"/>
+    <circle cx="6" cy="12" r="3"/>
+    <circle cx="18" cy="19" r="3"/>
+    <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+    <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+  </svg>
+) 
 
 const AuguthBlock = () => (
   <div className={styles.auguthBlock}>
     <div className={styles.auguthImgBox}>
       <img src={auguthImg} alt="Auguth Labs" className={styles.auguthImg} />
     </div>
-    {/* <p className={styles.auguthSub}>Auguth Labs (OPC) Pvt Ltd, India</p> */}
+    <p className={styles.auguthSub}>An Open-Source initiative by <br/>Auguth Labs (OPC) Pvt Ltd, India</p>
   </div>
 );
 
 const LinksBlock = () => (
   <div className={styles.linksBlock}>
     <div className={styles.col}>
-      <p className={styles.colHeading}>Links</p>
+      <p className={styles.colHeading}><span className={styles.fIcon}><LinkIcon/></span>Links</p>
       {links.map((l) =>
         l.internal ? (
           <Link
@@ -53,7 +76,7 @@ const LinksBlock = () => (
       )}
     </div>
     <div className={styles.col}>
-      <p className={styles.colHeading}>Social</p>
+      <p className={styles.colHeading}><span className={styles.fIcon}><SocialIcon/></span>Social</p>
       {social.map((s) => (
         <a key={s.label} href={s.href} className={styles.colLink}
           target="_blank" rel="noopener noreferrer">{s.label}</a>
@@ -78,10 +101,17 @@ export default function HomeFooter() {
                 <span className={styles.brandName}>Pallet-XP</span>
               </div>
               <p className={styles.tagline}>
-                A reputation primitive for Web3.<br />
-                Non-monetary. Non-transferable.<br />
-                Fully on-chain. Fully yours.
+                A reputation-driven XP system for tracking<br/> contribution, consistency, and participation <br/>in non-trusted runtime environments.
               </p>
+              <a
+              href="https://www.mozilla.org/en-US/MPL/2.0/"
+              className={styles.licBadge}
+              target="_blank"
+              rel="noopener noreferrer"
+              >
+                <PolkadotLogo />
+                Mozila Public Licence 2.0
+              </a>
             </div>
             <div className={styles.innerVsep} />
             <LinksBlock />
@@ -103,8 +133,17 @@ export default function HomeFooter() {
               <span className={styles.brandName}>Pallet-XP</span>
             </div>
             <p className={styles.tagline}>
-              A reputation primitive for Web3. Non-monetary. Non-transferable. Fully on-chain.
+              A reputation-driven XP system for tracking<br/> contribution, consistency, and participation <br/>in non-trusted runtime environments.
             </p>
+            <a
+            href="https://www.mozilla.org/en-US/MPL/2.0/"
+            className={styles.licBadge}
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+              <PolkadotLogo />
+              Mozila Public Licence 2.0
+            </a>
           </div>
           <div className={styles.hdivider} />
           <div className={styles.tabletBottom}>
@@ -122,8 +161,17 @@ export default function HomeFooter() {
             <span className={styles.brandName}>Pallet-XP</span>
           </div>
           <p className={styles.tagline}>
-            A reputation primitive for Web3. Non-monetary. Non-transferable. Fully on-chain.
+            A reputation-driven XP system for tracking<br/> contribution, consistency, and participation <br/>in non-trusted runtime environments.
           </p>
+          <a
+          href="https://www.mozilla.org/en-US/MPL/2.0/"
+          className={styles.licBadge}
+          target="_blank"
+          rel="noopener noreferrer"
+          >
+            <PolkadotLogo />
+            Mozila Public Licence 2.0
+          </a>
           <div className={styles.hdivider} />
           <LinksBlock />
           <div className={styles.hdivider} />
@@ -131,7 +179,7 @@ export default function HomeFooter() {
         </div>
 
         <div className={styles.bottom}>
-          <p className={styles.copy}>2026 pallet-xp. All rights reserved.</p>
+          <p className={styles.copy}>2026 Auguth Labs (OPC) Pvt Ltd. All rights reserved.</p>
         </div>
 
       </div>

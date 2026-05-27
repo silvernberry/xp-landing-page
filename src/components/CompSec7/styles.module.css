@@ -40,7 +40,7 @@
 
 .sub {
   font-family: var(--font-family);
-  font-size: var(--fs-body-md);
+  font-size: var(--fs-body-lg);
   color: var(--text-secondary);
   line-height: 1.7;
   margin: 0 0 clamp(20px, 3vw, 32px);

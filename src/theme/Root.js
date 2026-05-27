@@ -10,14 +10,15 @@ import React from 'react';
 import { useLocation } from '@docusaurus/router';
 import HomeNavbar from '@site/src/components/HomeNavbar';
 import HomeFooter from '@site/src/components/HomeFooter';
+import { useNavbarMobileSidebar } from '@docusaurus/theme-common/internal';
 
 export default function Root({ children }) {
   const { pathname } = useLocation();
 
   const isHome =
     pathname === '/' ||
-    pathname === '/temp_m3s/pallet-xp/' ||
-    pathname === '/temp_m3s/pallet-xp';
+    pathname === '/silvernberry/xp-landing-page/' ||
+    pathname === '/silvernberry/xp-landing-page/';
 
   return (
     <>

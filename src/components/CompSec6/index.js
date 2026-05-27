@@ -48,7 +48,7 @@ const smallCards = [
     title: 'Reserve vs Lock',
     points: [
       { text: <><Kw>Reserve</Kw> - soft hold, intent-based, withdrawable</>, color: '#7c5cfc' },
-      { text: <><Kw>Lock</Kw> - strict, no partial release</>, color: '#fb923c' },
+      { text: <><Kw>Lock</Kw> - strict hold, no partial release</>, color: '#fb923c' },
       { text: 'Any active lock protects the key from reaping', color: '#4ade80' },
     ],
   },
@@ -67,8 +67,8 @@ const smallCards = [
     eyebrow: '04 - Ownership',
     title: 'Non-transferable XP',
     points: [
-      { text: 'No total supply / inflation', color: '#fb923c' },
-      { text: 'XP value stays with the key', color: '#4ade80' },
+      { text: 'No total supply, no inflation, no issuance tracking', color: '#fb923c' },
+      { text: 'XP is bound to the key, not the account holding it', color: '#4ade80' },
       { text: 'Only key ownership can be transfered', color: '#4ade80' },
     ],
   },

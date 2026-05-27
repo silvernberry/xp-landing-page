@@ -68,7 +68,7 @@ export default function CompSec2() {
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <p className={styles.label}>Build for Builders. Backed by Web3 Principles</p>
+        <p className={styles.label}>Built for Builders. Backed by Web3 Principles</p>
 
         <div className={styles.marqueeWrapper}>
           <div className={styles.marqueeTrack}>

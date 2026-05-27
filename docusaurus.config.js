@@ -11,8 +11,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'pallet-xp',
-  tagline: 'A reputation primitive for Web3. Non-monetary. Non-transferable. Fully on-chain.',
-  favicon: 'img/favicon.ico',
+  tagline: 'A reputation-driven XP system for tracking contribution, consistency, and participation in non-trusted runtime environments.',
+  favicon: 'img/favicon-trans-v2.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -24,19 +24,17 @@ const config = {
 },
 
   // Set the production url of your site here
-  url: 'https://auguth.github.io',
+  url: 'https://silvernberry.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/temp_m3s/pallet-xp/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'auguth', // Usually your GitHub org/user name.
-  projectName: 'frame-suite', // Usually your repo name.
-  deploymentBranch: 'gh-pages',
-  trailingSlash: false,
+  // organizationName: 'silvernberry', // Usually your GitHub org/user name.
+  projectName: 'xp-landing-page', // Usually your repo name.
+
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -58,23 +56,23 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/silvernberry/xp-landing-page/tree/main/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          // Useful options to enforce blogging best practices
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   feedOptions: {
+        //     type: ['rss', 'atom'],
+        //     xslt: true,
+        //   },
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   editUrl:
+        //     'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        //   // Useful options to enforce blogging best practices
+        //   onInlineTags: 'warn',
+        //   onInlineAuthors: 'warn',
+        //   onUntruncatedBlogPosts: 'warn',
+        // },
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -82,88 +80,88 @@ const config = {
     ],
   ],
 
-  themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-    ({
-      // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
-      colorMode: {
-        respectPrefersColorScheme: true,
-      },
-      navbar: {
-        title: 'Pallet XP',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
-        items: [
+  // themeConfig:
+  //   /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  //   ({
+  //     // Replace with your project's social card
+  //     image: 'img/docusaurus-social-card.jpg',
+  //     colorMode: {
+  //       respectPrefersColorScheme: true,
+  //     },
+  //     navbar: {
+  //       title: 'Pallet XP',
+  //       logo: {
+  //         alt: 'My Site Logo',
+  //         src: 'img/logo.svg',
+  //       },
+  //       items: [
 
-          {
-            type: 'docSidebar',
-            sidebarId: 'docs',
-            position: 'left',
-            label: 'Docs',
-          },
-          {to: '/blog', label: 'Crates', position: 'left'},
-          {to: '/blog', label: 'Source', position: 'left'},
-          {to: '/blog', label: 'Github', position: 'left'},
-          {
-            href: '/blog',
-            label: 'Get Started',
-            position: 'right',
-          },
-        ],
-      },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
-      prism: {
-        theme: prismThemes.github,
-        darkTheme: prismThemes.dracula,
-      },
-    }),
+  //         {
+  //           type: 'docSidebar',
+  //           sidebarId: 'docs',
+  //           position: 'left',
+  //           label: 'Docs',
+  //         },
+  //         {to: '/blog', label: 'Crates', position: 'left'},
+  //         {to: '/blog', label: 'Source', position: 'left'},
+  //         {to: '/blog', label: 'Github', position: 'left'},
+  //         {
+  //           href: '/blog',
+  //           label: 'Get Started',
+  //           position: 'right',
+  //         },
+  //       ],
+  //     },
+  //     footer: {
+  //       style: 'dark',
+  //       links: [
+  //         {
+  //           title: 'Docs',
+  //           items: [
+  //             {
+  //               label: 'Tutorial',
+  //               to: '/docs/intro',
+  //             },
+  //           ],
+  //         },
+  //         {
+  //           title: 'Community',
+  //           items: [
+  //             {
+  //               label: 'Stack Overflow',
+  //               href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+  //             },
+  //             {
+  //               label: 'Discord',
+  //               href: 'https://discordapp.com/invite/docusaurus',
+  //             },
+  //             {
+  //               label: 'X',
+  //               href: 'https://x.com/docusaurus',
+  //             },
+  //           ],
+  //         },
+  //         {
+  //           title: 'More',
+  //           items: [
+  //             {
+  //               label: 'Blog',
+  //               to: '/blog',
+  //             },
+  //             {
+  //               label: 'GitHub',
+  //               href: 'https://github.com/facebook/docusaurus',
+  //             },
+  //           ],
+  //         },
+  //       ],
+  //       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+  //     },
+  //     prism: {
+  //       theme: prismThemes.github,
+  //       darkTheme: prismThemes.dracula,
+  //     },
+  //   }),
 };
 
 export default config;
