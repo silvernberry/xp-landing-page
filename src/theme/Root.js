@@ -17,8 +17,8 @@ export default function Root({ children }) {
 
   const isHome =
     pathname === '/' ||
-    pathname === '/silvernberry/xp-landing-page/' ||
-    pathname === '/silvernberry/xp-landing-page/';
+    pathname === '/xp-landing-page/' ||
+    pathname === '/xp-landing-page/';
 
   return (
     <>
