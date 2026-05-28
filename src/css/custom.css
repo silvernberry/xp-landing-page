@@ -167,9 +167,24 @@
 }
 
 .navbar {
-  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  pointer-events: none !important;
 }
-
+ 
+.navbar-sidebar,
+.navbar-sidebar__backdrop {
+  pointer-events: auto !important;
+}
+ 
+.theme-doc-sidebar-container {
+  top: 80px !important;
+  height: calc(100vh - 80px) !important;
+  position: sticky;
+}
+ 
 .docs-wrapper {
   padding-top: 80px;
 }
@@ -182,6 +197,21 @@
 
 table thead th {
   background-color: rgba(127, 95, 255, 0.06);
+}
+
+.theme-layout-navbar-sidebar,
+.navbar-sidebar {
+  padding-top: 5px;
+  margin-top: 60px;
+}
+
+.toggle_vylO {
+  display: none;
+}
+
+.clean-btn,
+.navbar-sidebar__close {
+  display: none;
 }
 
 blockquote {

@@ -45,7 +45,7 @@ const AuguthBlock = () => (
     <div className={styles.auguthImgBox}>
       <img src={auguthImg} alt="Auguth Labs" className={styles.auguthImg} />
     </div>
-    <p className={styles.auguthSub}>An Open-Source initiative by <br/>Auguth Labs (OPC) Pvt Ltd, India</p>
+    <p className={styles.auguthSub}>Part of Auguth Labs open-source softwares.</p>
   </div>
 );
 

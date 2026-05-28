@@ -3,9 +3,8 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999;
+  z-index: 1000;
   background: transparent;
-  /* padding: 0 clamp(1.25rem, 4vw, 4rem); */
   transition: background 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -223,6 +222,27 @@
 .barMid { opacity: 0; }
 .barBot { transform: translateY(-7px) rotate(-45deg); }
 
+/* ── Sidebar toggle button ───────────────────────────────── */
+
+.sidebarToggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(127, 95, 255, 0.15);
+  border: 1px solid rgba(127, 95, 255, 0.3);
+  border-radius: 8px;
+  color: var(--text-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s;
+}
+
+.sidebarToggle:hover {
+  background: rgba(127, 95, 255, 0.28);
+}
+
 /* ── Mobile menu ─────────────────────────────────────────── */
 
 .mobileMenu {
@@ -261,6 +281,8 @@
 .mobileLinkIcon {
   width: 18px;
   height: 18px;
+  min-width: 18px;
+  min-height: 18px;
   flex-shrink: 0;
   opacity: 0.6;
 }
@@ -302,7 +324,6 @@
 }
 
 .mobileCta {
-  /* margin: 1.25rem 2rem 1.5rem; */
   padding: 0.75rem 1.4rem;
   background: var(--button-primary);
   color: var(--text-primary);
@@ -311,13 +332,40 @@
   font-weight: 600;
   text-align: center;
   border-radius: 6px;
-  text-decoration: none !important;}
+  text-decoration: none !important;
+}
 
 /* ── Breakpoints ─────────────────────────────────────────── */
 
 @media (max-width: 768px) {
+  /* Hide desktop elements */
   .navLinks,
   .rightGroup  { display: none; }
+
+  /* Show mobile elements */
   .hamburger   { display: flex; }
   .mobileMenu  { display: flex; }
+
+  /* Sidebar toggle visible on mobile */
+  .sidebarToggleMobile { display: flex; }
+
+  /* Default mobile inner: logo left, hamburger right */
+  .inner {
+    padding: 0 1.25rem;
+  }
+
+  /* Docs mobile inner: 3-col grid [sidebar | logo | hamburger] */
+  .innerDocs {
+    display: grid;
+    grid-template-columns: 36px 1fr 36px;
+    align-items: center;
+    gap: 8px;
+    padding: 0 1.25rem;
+  }
+
+  /* Logo centred in the middle column on docs */
+  .logoCentered {
+    text-align: center;
+    justify-self: center;
+  }
 }

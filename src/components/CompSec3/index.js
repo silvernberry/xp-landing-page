@@ -116,6 +116,7 @@ export default function CompSec3() {
               <div className={styles.hr} />
               <div className={styles.tag}><span className={`${styles.dot} ${styles.dotViolet}`} />Aligned incentives</div>
               <div className={styles.tag}><span className={`${styles.dot} ${styles.dotAmber}`} />Long-term trust</div>
+              <div className={styles.tag}><span className={`${styles.dot} ${styles.dotViolet}`} />Reputation over noise</div>
             </div>
           </div>
 
@@ -161,6 +162,7 @@ export default function CompSec3() {
               <div className={styles.hr} />
               <div className={styles.tag}><span className={`${styles.dot} ${styles.dotViolet}`} />Aligned incentives</div>
               <div className={styles.tag}><span className={`${styles.dot} ${styles.dotAmber}`} />Long-term trust</div>
+              <div className={styles.tag}><span className={`${styles.dot} ${styles.dotViolet}`} />Reputation over noise</div>
             </div>
           </div>
 
