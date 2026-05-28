@@ -146,7 +146,12 @@ export default function CompSec9() {
                 <p className={styles.cardTitle}>{c.title}</p>
                 <p className={styles.mobileCardDesc}>{c.desc}</p>
               </div>
-              <span className={styles.mobileArrow}>↗</span>
+              <span className={styles.mobileArrow}>
+                <svg  xmlns="http://www.w3.org/2000/svg" width="15" height="15"   
+                  fill="currentColor" viewBox="0 0 24 24" >
+                  <path d="M17 16V7H6v2h7.59l-8.3 8.29 1.42 1.42 8.29-8.3V16z"/>
+                </svg>   
+              </span>
             </a>
           ))}
         </div>
